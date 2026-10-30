@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Europe Travel Destinations / 歐洲旅遊目的地</title>
+    <!-- Google Fonts for playful kid-friendly typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #e8f5e9; /* Light refreshing green background */
+            font-family: 'Fredoka One', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            gap: 12px;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            color: #2e7d32; /* Deep green for Europe title */
+            text-shadow: 2px 2px 0px #c8e6c9, 4px 4px 0px #a5d6a7;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #1b5e20;
+            font-family: 'Noto Sans TC', sans-serif;
+            text-shadow: 1px 1px 0px #f1f8e9;
+        }
+
+        .back-btn {
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-family: 'Fredoka One', cursive, sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            text-decoration: none;
+            align-self: flex-start;
+        }
+
+        .back-btn:hover {
+            background-color: #0277bd;
+            transform: scale(1.05);
+        }
+
+        @media (min-width: 768px) {
+            .back-btn {
+                position: absolute;
+                top: 0;
+                left: 10px;
+                align-self: auto;
+            }
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            width: 95vw;
+            max-width: 1200px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border: 4px solid #a5d6a7;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #66bb6a;
+        }
+
+        .card-img-container {
+            width: 100%;
+            height: 170px;
+            overflow: hidden;
+            background-color: #f1f8e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-img {
+            transform: scale(1.08);
+        }
+
+        .card-content {
+            padding: 15px;
+            width: 100%;
+        }
+
+        .dest-name-eng {
+            font-size: 1.15rem;
+            color: #2e7d32;
+            margin-bottom: 4px;
+        }
+
+        .dest-name-chn {
+            font-size: 1rem;
+            color: #37474f;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">⬅️ Back to Map / 返回地圖</a>
+        <h1>Europe Travel Destinations</h1>
+        <div class="subtitle">歐洲旅遊目的地</div>
+    </header>
+
+    <div class="destinations-grid">
+
+        <!-- 1 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/disneyland-paris.jpg" alt="Disneyland Paris" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Disneyland Paris</div>
+                <div class="dest-name-chn">巴黎迪士尼樂園</div>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/puy-du-fou.jpg" alt="Puy du Fou" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Puy du Fou Theme Park</div>
+                <div class="dest-name-chn">狂人國歷史主題公園</div>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/harry-potter-tour.jpg" alt="Harry Potter Studio Tour" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Harry Potter Studio Tour</div>
+                <div class="dest-name-chn">哈利波特片場之旅</div>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/tower-london.jpg" alt="Tower of London" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Tower of London & Bridge</div>
+                <div class="dest-name-chn">倫敦塔與倫敦塔橋</div>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/efteling.jpg" alt="Efteling" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Efteling Theme Park</div>
+                <div class="dest-name-chn">艾夫特琳童話樂園</div>
+            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/keukenhof.jpg" alt="Keukenhof Gardens" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Keukenhof Tulip Gardens</div>
+                <div class="dest-name-chn">庫肯霍夫鬱金香花園</div>
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/pairi-daiza.jpg" alt="Pairi Daiza Zoo" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Pairi Daiza Zoo</div>
+                <div class="dest-name-chn">天堂野生動物園</div>
+            </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/europa-park.jpg" alt="Europa-Park" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Europa-Park</div>
+                <div class="dest-name-chn">歐洲公園</div>
+            </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/phantasialand.jpg" alt="Phantasialand" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Phantasialand Theme Park</div>
+                <div class="dest-name-chn">夢幻樂園主題公園</div>
+            </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/miniatur-wunderland.jpg" alt="Miniatur Wunderland" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Miniatur Wunderland</div>
+                <div class="dest-name-chn">微縮景觀世界</div>
+            </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/swiss-transport-museum.jpg" alt="Swiss Transport Museum" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Swiss Transport Museum</div>
+                <div class="dest-name-chn">瑞士交通博物館</div>
+            </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/jungfraujoch.jpg" alt="Jungfraujoch" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Jungfraujoch - Top of Europe</div>
+                <div class="dest-name-chn">少女峰：歐洲之巔</div>
+            </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/schonbrunn-palace.jpg" alt="Schönbrunn Palace" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Schönbrunn Palace & Zoo</div>
+                <div class="dest-name-chn">美泉宮與美泉宮動物園</div>
+            </div>
+        </div>
+
+        <!-- 14 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/tivoli-gardens.jpg" alt="Tivoli Gardens" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Tivoli Gardens</div>
+                <div class="dest-name-chn">趣伏里公園</div>
+            </div>
+        </div>
+
+        <!-- 15 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/lego-house.jpg" alt="LEGO House" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">LEGO House & LEGOLAND</div>
+                <div class="dest-name-chn">樂高之家與樂高樂園</div>
+            </div>
+        </div>
+
+        <!-- 16 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/junibacken.jpg" alt="Junibacken" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Junibacken Fairytale Museum</div>
+                <div class="dest-name-chn">六小娃童話博物館</div>
+            </div>
+        </div>
+
+        <!-- 17 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/santa-village.jpg" alt="Santa Claus Village" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Santa Claus Village</div>
+                <div class="dest-name-chn">聖誕老人村</div>
+            </div>
+        </div>
+
+        <!-- 18 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/norwegian-fjords.jpg" alt="Norwegian Fjords" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Norwegian Fjords & Railways</div>
+                <div class="dest-name-chn">挪威峽灣與高山鐵路</div>
+            </div>
+        </div>
+
+        <!-- 19 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/santorini.jpg" alt="Santorini Island" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Santorini Volcanic Island</div>
+                <div class="dest-name-chn">聖托里尼火山島</div>
+            </div>
+        </div>
+
+        <!-- 20 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/tower-pisa.jpg" alt="Leaning Tower of Pisa" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Leaning Tower of Pisa</div>
+                <div class="dest-name-chn">比薩斜塔</div>
+            </div>
+        </div>
+
+        <!-- 21 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/gardaland.jpg" alt="Gardaland" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Gardaland Resort</div>
+                <div class="dest-name-chn">加達雲霄樂園</div>
+            </div>
+        </div>
+
+        <!-- 22 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/park-guell.jpg" alt="Park Güell" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Park Güell</div>
+                <div class="dest-name-chn">奎爾公園</div>
+            </div>
+        </div>
+
+        <!-- 23 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/portaventura.jpg" alt="PortAventura World" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">PortAventura World</div>
+                <div class="dest-name-chn">冒險港世界主題樂園</div>
+            </div>
+        </div>
+
+        <!-- 24 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/oceanario-lisboa.jpg" alt="Oceanário de Lisboa" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Oceanário de Lisboa</div>
+                <div class="dest-name-chn">里斯本海洋水族館</div>
+            </div>
+        </div>
+
+        <!-- 25 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/acropolis.jpg" alt="Acropolis of Athens" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Acropolis of Athens</div>
+                <div class="dest-name-chn">雅典衛城</div>
+            </div>
+        </div>
+
+        <!-- 26 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/prague-castle.jpg" alt="Prague Castle" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Prague Castle & Petřín Tower</div>
+                <div class="dest-name-chn">布拉格城堡與佩特任瞭望塔</div>
+            </div>
+        </div>
+
+        <!-- 27 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/salt-mine.jpg" alt="Wieliczka Salt Mine" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Wieliczka Salt Mine</div>
+                <div class="dest-name-chn">維利奇卡鹽礦</div>
+            </div>
+        </div>
+
+        <!-- 28 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/energylandia.jpg" alt="Energylandia" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Energylandia</div>
+                <div class="dest-name-chn">活力樂園</div>
+            </div>
+        </div>
+
+        <!-- 29 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/blue-lagoon.jpg" alt="Blue Lagoon Iceland" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Blue Lagoon & Geysers</div>
+                <div class="dest-name-chn">藍湖溫泉與間歇泉</div>
+            </div>
+        </div>
+
+        <!-- 30 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/mount-etna.jpg" alt="Mount Etna Volcano" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Mount Etna Volcano Tour</div>
+                <div class="dest-name-chn">埃特納火山探險</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

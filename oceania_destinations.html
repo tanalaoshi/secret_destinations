@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oceania Travel Destinations / 大洋洲旅遊目的地</title>
+    <!-- Google Fonts for playful kid-friendly typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f3e5f5; /* Light purple tint for Oceania */
+            font-family: 'Fredoka One', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            color: #6a1b9a; /* Deep purple matching Oceania map color */
+            text-shadow: 2px 2px 0px #e1bee7, 4px 4px 0px #ce93d8;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #4a148c;
+            font-family: 'Noto Sans TC', sans-serif;
+            text-shadow: 1px 1px 0px #f3e5f5;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-family: 'Fredoka One', cursive, sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background-color: #0277bd;
+            transform: scale(1.05);
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            width: 95vw;
+            max-width: 1200px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border: 4px solid #ce93d8;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #ab47bc;
+        }
+
+        .card-img-container {
+            width: 100%;
+            height: 170px;
+            overflow: hidden;
+            background-color: #f3e5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-img {
+            transform: scale(1.08);
+        }
+
+        .card-content {
+            padding: 15px;
+            width: 100%;
+        }
+
+        .dest-name-eng {
+            font-size: 1.15rem;
+            color: #6a1b9a;
+            margin-bottom: 4px;
+        }
+
+        .dest-name-chn {
+            font-size: 1rem;
+            color: #37474f;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            .back-btn {
+                position: relative;
+                margin-bottom: 15px;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">⬅️ Back to Map / 返回地圖</a>
+        <h1>Oceania Travel Destinations</h1>
+        <div class="subtitle">大洋洲旅遊目的地</div>
+    </header>
+
+    <div class="destinations-grid">
+
+        <!-- 1 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/kangaroo-island.jpg" alt="Kangaroo Island Wildlife Park" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Kangaroo Island Wildlife Park</div>
+                <div class="dest-name-chn">袋鼠島野生動物園</div>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/taronga-zoo.jpg" alt="Taronga Zoo" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Taronga Zoo & Sydney Ferry</div>
+                <div class="dest-name-chn">塔龍加動物園與雪梨港渡輪</div>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/puffing-billy.jpg" alt="Puffing Billy Railway" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Puffing Billy Steam Railway</div>
+                <div class="dest-name-chn">普芬比利蒸汽火車</div>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/phillip-island-penguins.jpg" alt="Phillip Island Penguins" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Phillip Island Penguin Parade</div>
+                <div class="dest-name-chn">菲利普島神仙企鵝歸巢</div>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/lone-pine-koalas.jpg" alt="Lone Pine Koala Sanctuary" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Lone Pine Koala Sanctuary</div>
+                <div class="dest-name-chn">龍柏考拉保護區</div>
+            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/movie-world.jpg" alt="Warner Bros. Movie World" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Warner Bros. Movie World</div>
+                <div class="dest-name-chn">華納兄弟電影世界</div>
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/sea-world-gold-coast.jpg" alt="Sea World Gold Coast" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Sea World Gold Coast</div>
+                <div class="dest-name-chn">黃金海岸海洋世界</div>
+            </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/tangalooma-dolphins.jpg" alt="Tangalooma Dolphins" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Tangalooma Dolphin Feeding</div>
+                <div class="dest-name-chn">天閣露瑪野生海豚餵食體驗</div>
+            </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/uluru.jpg" alt="Uluru National Park" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Uluru-Kata Tjuta National Park</div>
+                <div class="dest-name-chn">烏魯魯－卡塔丘塔國家公園</div>
+            </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/hobbiton.jpg" alt="Hobbiton Movie Set" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Hobbiton Movie Set</div>
+                <div class="dest-name-chn">哈比村電影取景地</div>
+            </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/rotorua-zipline.jpg" alt="Rotorua Canopy Ziplining" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Rotorua Canopy Ziplining</div>
+                <div class="dest-name-chn">羅托路亞樹冠滑索探險</div>
+            </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/queenstown-luge.jpg" alt="Skyline Queenstown Luge" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Skyline Queenstown Luge</div>
+                <div class="dest-name-chn">皇后鎮天際線滑板車</div>
+            </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/agrodome-farm.jpg" alt="Agrodome Farm" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Agrodome Farm Experience</div>
+                <div class="dest-name-chn">愛歌頓皇家農場體驗</div>
+            </div>
+        </div>
+
+        <!-- 14 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/te-papa-museum.jpg" alt="Te Papa Museum" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Te Papa Interactive Museum</div>
+                <div class="dest-name-chn">蒂帕帕國家博物館</div>
+            </div>
+        </div>
+
+        <!-- 15 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/antarctic-centre-nz.jpg" alt="International Antarctic Centre" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">International Antarctic Centre</div>
+                <div class="dest-name-chn">國際南極中心</div>
+            </div>
+        </div>
+
+        <!-- 16 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/franz-josef-glacier.jpg" alt="Franz Josef Glacier Helicopter" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Franz Josef Glacier Helicopter</div>
+                <div class="dest-name-chn">法蘭茲約瑟夫冰河直升機體驗</div>
+            </div>
+        </div>
+
+        <!-- 17 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/kualoa-ranch.jpg" alt="Kualoa Ranch Jurassic Tour" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Kualoa Ranch Jurassic Park Tour</div>
+                <div class="dest-name-chn">古蘭尼牧場侏羅紀公園之旅</div>
+            </div>
+        </div>
+
+        <!-- 18 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/polynesian-cultural-center.jpg" alt="Polynesian Cultural Center" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Polynesian Cultural Center</div>
+                <div class="dest-name-chn">玻里尼西亞文化中心</div>
+            </div>
+        </div>
+
+        <!-- 19 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/waikiki-submarine.jpg" alt="Waikiki Submarine Tour" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Waikiki Aquarium & Submarine</div>
+                <div class="dest-name-chn">威基基水族館與潛水艇探險</div>
+            </div>
+        </div>
+
+        <!-- 20 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/hawaii-volcanoes.jpg" alt="Hawaii Volcanoes Park" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Hawaii Volcanoes National Park</div>
+                <div class="dest-name-chn">夏威夷火山國家公園</div>
+            </div>
+        </div>
+
+        <!-- 21 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/maui-ocean-center.jpg" alt="Maui Ocean Center" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Maui Ocean Center</div>
+                <div class="dest-name-chn">茂宜島海洋中心水族館</div>
+            </div>
+        </div>
+
+        <!-- 22 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/kula-wild-park.jpg" alt="Kula WILD Adventure Park" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Kula WILD Adventure Park</div>
+                <div class="dest-name-chn">庫拉野生冒險公園</div>
+            </div>
+        </div>
+
+        <!-- 23 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/mamanuca-islands.jpg" alt="Mamanuca Islands Fiji" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Mamanuca Islands Snorkeling</div>
+                <div class="dest-name-chn">瑪瑪努卡群島浮潛與跳島遊</div>
+            </div>
+        </div>
+
+        <!-- 24 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/moorea-turtle.jpg" alt="Moorea Turtle & Lagoonarium" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Moorea Sea Turtle & Lagoonarium</div>
+                <div class="dest-name-chn">莫雷阿島海龜保護區與潟湖</div>
+            </div>
+        </div>
+
+        <!-- 25 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/belau-museum.jpg" alt="Belau National Museum" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Belau National Museum</div>
+                <div class="dest-name-chn">帛琉國家博物館與文化中心</div>
+            </div>
+        </div>
+
+        <!-- 26 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/tosua-trench.jpg" alt="ToSua Ocean Trench" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">ToSua Ocean Trench</div>
+                <div class="dest-name-chn">蘇阿海溝天然泳池</div>
+            </div>
+        </div>
+
+        <!-- 27 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/mele-cascades.jpg" alt="Mele Cascades Waterfall" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Mele Cascades Waterfall</div>
+                <div class="dest-name-chn">梅勒瀑布探險</div>
+            </div>
+        </div>
+
+        <!-- 28 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/yasur-volcano.jpg" alt="Yasur Active Volcano" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Mount Yasur Volcano Tour</div>
+                <div class="dest-name-chn">亞蘇爾活火山奇觀</div>
+            </div>
+        </div>
+
+        <!-- 29 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/marovo-lagoon.jpg" alt="Marovo Lagoon Sanctuary" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Marovo Lagoon Marine Sanctuary</div>
+                <div class="dest-name-chn">馬羅沃瀉湖海洋保護區</div>
+            </div>
+        </div>
+
+        <!-- 30 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/aitutaki-lagoon.jpg" alt="Aitutaki Lagoon" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Aitutaki Lagoon & Atoll</div>
+                <div class="dest-name-chn">艾圖塔基潟湖與珊瑚環礁</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

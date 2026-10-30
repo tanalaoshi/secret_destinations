@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Secret Travel Destination / 尋找你的神祕旅遊景點</title>
+    <!-- Google Fonts for playful kid-friendly typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Fredoka One', cursive, sans-serif;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 15px;
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #0277bd;
+            text-shadow: 2px 2px 0px #b3e5fc, 4px 4px 0px #4fc3f7;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.6rem;
+            color: #00838f;
+            font-family: 'Noto Sans TC', sans-serif;
+            text-shadow: 1px 1px 0px #b2ebf2;
+        }
+
+        /* Map Container holding the map image */
+        .map-container {
+            position: relative;
+            width: 95vw;
+            max-width: 1200px;
+            height: 600px;
+            background: #ffffff;
+            border: 8px solid #0288d1;
+            border-radius: 35px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            overflow: hidden;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* The world map image */
+        .map-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Clickable Kid-Friendly Bilingual Map Labels */
+        .map-label {
+            position: absolute;
+            cursor: pointer;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            user-select: none;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 8px 16px;
+            border-radius: 16px;
+            backdrop-filter: blur(3px);
+            border: 3px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .map-label:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: rgba(2, 119, 189, 0.85);
+            border-color: #fff9c4;
+        }
+
+        /* Click visual feedback class */
+        .map-label.clicked {
+            animation: flashPulse 0.4s ease;
+        }
+
+        @keyframes flashPulse {
+            0% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.2); background: #4fc3f7; }
+            100% { transform: translate(-50%, -50%) scale(1); }
+        }
+
+        .eng-name {
+            font-size: 16px;
+            color: #ffffff;
+            font-family: 'Fredoka One', cursive, sans-serif;
+            text-shadow: 2px 2px 0px #000, -2px -2px 0px #000, 2px -2px 0px #000, -2px 2px 0px #000;
+            letter-spacing: 0.5px;
+        }
+
+        .chn-name {
+            font-size: 13px;
+            color: #fff9c4;
+            font-family: 'Noto Sans TC', sans-serif;
+            text-shadow: 1.5px 1.5px 0px #000, -1.5px -1.5px 0px #000, 1.5px -1.5px 0px #000, -1.5px 1.5px 0px #000;
+            margin-top: 2px;
+        }
+
+        /* Antarctica Snow & Penguin Effects */
+        .snowflake {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: fall linear forwards;
+            z-index: 20;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-20px); opacity: 1; }
+            100% { transform: translateY(120px); opacity: 0; }
+        }
+
+        /* Cartoon Penguin Popup */
+        #penguin-popup {
+            position: absolute;
+            bottom: 15%;
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            background: white;
+            border: 4px solid #0288d1;
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            pointer-events: none;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 100;
+        }
+
+        #penguin-popup.show {
+            transform: translateX(-50%) scale(1);
+        }
+
+        .penguin-avatar {
+            font-size: 2.5rem;
+            animation: shiver 0.1s infinite alternate;
+        }
+
+        @keyframes shiver {
+            0% { transform: rotate(-6deg); }
+            100% { transform: rotate(6deg); }
+        }
+
+        .penguin-text {
+            font-size: 1.1rem;
+            color: #0277bd;
+            font-family: 'Fredoka One', cursive, sans-serif;
+            line-height: 1.3;
+        }
+
+        .hint {
+            font-size: 1.1rem;
+            color: #006064;
+            background: #e0f2f1;
+            padding: 10px 22px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            font-family: 'Fredoka One', cursive, sans-serif;
+            text-align: center;
+        }
+
+        .hint-chn {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 1rem;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Find Your Secret Travel Destination</h1>
+        <div class="subtitle">尋找你的神祕旅遊景點</div>
+    </header>
+
+    <div class="map-container" id="mapContainer">
+        <!-- Direct image link from Wikimedia -->
+        <img src="https://upload.wikimedia.org/wikipedia/en/9/99/BlankMap-World-Continents-Coloured.png" alt="World Map" class="map-bg">
+
+        <!-- Clickable Continent Labels -->
+        <div class="map-label" style="top: 25%; left: 22%;" id="na-label" onclick="handleContinentClick('north_america_destinations.html', 'na-label')">
+            <div class="eng-name">North America</div>
+            <div class="chn-name">北美洲</div>
+        </div>
+
+        <div class="map-label" style="top: 60%; left: 26%;" id="sa-label" onclick="handleContinentClick('south_america_destinations.html', 'sa-label')">
+            <div class="eng-name">South America</div>
+            <div class="chn-name">南美洲</div>
+        </div>
+
+        <div class="map-label" style="top: 22%; left: 47%;" id="eu-label" onclick="handleContinentClick('europe_destinations.html', 'eu-label')">
+            <div class="eng-name">Europe</div>
+            <div class="chn-name">歐洲</div>
+        </div>
+
+        <div class="map-label" style="top: 52%; left: 50%;" id="af-label" onclick="handleContinentClick('africa_destinations.html', 'af-label')">
+            <div class="eng-name">Africa</div>
+            <div class="chn-name">非洲</div>
+        </div>
+
+        <div class="map-label" style="top: 28%; left: 71%;" id="as-label" onclick="handleContinentClick('asia_destinations.html', 'as-label')">
+            <div class="eng-name">Asia</div>
+            <div class="chn-name">亞洲</div>
+        </div>
+
+        <div class="map-label" style="top: 72%; left: 83%;" id="oc-label" onclick="handleContinentClick('oceania_destinations.html', 'oc-label')">
+            <div class="eng-name">Oceania</div>
+            <div class="chn-name">大洋洲</div>
+        </div>
+
+        <div class="map-label" style="top: 91%; left: 50%;" id="an-label" onclick="triggerAntarcticaEffect('an-label')">
+            <div class="eng-name">Antarctica ❄️</div>
+            <div class="chn-name">南極洲</div>
+        </div>
+
+        <!-- Shivering Penguin Popup Container -->
+        <div id="penguin-popup">
+            <div class="penguin-avatar">🐧❄️</div>
+            <div class="penguin-text">Brrr! So cold! <br>好冷啊！</div>
+        </div>
+    </div>
+
+    <div class="hint">
+        <div>💡 Click on the continent you want to explore new secret destinations!</div>
+        <div class="hint-chn">💡 點擊你想探索全新神祕景點的大洲！</div>
+    </div>
+
+    <script>
+        function handleContinentClick(destinationPage, labelId) {
+            const labelElement = document.getElementById(labelId);
+            
+            labelElement.classList.add('clicked');
+            setTimeout(() => {
+                labelElement.classList.remove('clicked');
+            }, 400);
+
+            setTimeout(() => {
+                window.location.href = destinationPage;
+            }, 350);
+        }
+
+        function triggerAntarcticaEffect(labelId) {
+            const container = document.getElementById('mapContainer');
+            const popup = document.getElementById('penguin-popup');
+            const labelElement = document.getElementById(labelId);
+
+            if (labelElement) {
+                labelElement.classList.add('clicked');
+                setTimeout(() => labelElement.classList.remove('clicked'), 400);
+            }
+
+            popup.classList.add('show');
+
+            for (let i = 0; i < 35; i++) {
+                createSnowflake(container);
+            }
+
+            setTimeout(() => {
+                popup.classList.remove('show');
+            }, 2500);
+        }
+
+        function createSnowflake(container) {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            
+            const size = Math.random() * 8 + 4;
+            snowflake.style.width = `${size}px`;
+            snowflake.style.height = `${size}px`;
+            snowflake.style.left = `${Math.random() * container.offsetWidth}px`;
+            snowflake.style.top = `${container.offsetHeight * 0.7 + Math.random() * 60}px`;
+            
+            const duration = Math.random() * 1 + 0.5;
+            snowflake.style.animationDuration = `${duration}s`;
+
+            container.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, duration * 1000);
+        }
+    </script>
+</body>
+</html>

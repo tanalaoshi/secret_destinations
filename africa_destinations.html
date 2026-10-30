@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Africa Travel Destinations / 非洲旅遊目的地</title>
+    <!-- Google Fonts for playful kid-friendly typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #fffde7;
+            font-family: 'Fredoka One', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            color: #f57f17;
+            text-shadow: 2px 2px 0px #fff9c4, 4px 4px 0px #ffe082;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #e65100;
+            font-family: 'Noto Sans TC', sans-serif;
+            text-shadow: 1px 1px 0px #fff8e1;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-family: 'Fredoka One', cursive, sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background-color: #0277bd;
+            transform: scale(1.05);
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            width: 95vw;
+            max-width: 1200px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border: 4px solid #ffe082;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #ffb300;
+        }
+
+        .card-img-container {
+            width: 100%;
+            height: 170px;
+            overflow: hidden;
+            background-color: #fff8e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-img {
+            transform: scale(1.08);
+        }
+
+        .card-content {
+            padding: 15px;
+            width: 100%;
+        }
+
+        .dest-name-eng {
+            font-size: 1.15rem;
+            color: #e65100;
+            margin-bottom: 4px;
+        }
+
+        .dest-name-chn {
+            font-size: 1rem;
+            color: #37474f;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            .back-btn {
+                position: relative;
+                margin-bottom: 15px;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">⬅️ Back to Map / 返回地圖</a>
+        <h1>Africa Travel Destinations</h1>
+        <div class="subtitle">非洲旅遊目的地</div>
+    </header>
+
+    <div class="destinations-grid">
+
+        <!-- 1 (NEW: Sphinx only) -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/great-sphinx.jpg" alt="Great Sphinx of Giza" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Great Sphinx of Giza</div>
+                <div class="dest-name-chn">吉薩人面獅身像</div>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/grand-egyptian-museum.jpg" alt="Grand Egyptian Museum" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Grand Egyptian Museum</div>
+                <div class="dest-name-chn">大埃及博物館</div>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/majorelle-garden.jpg" alt="Majorelle Garden" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Majorelle Garden</div>
+                <div class="dest-name-chn">馬若雷勒花園</div>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/ouzoud-falls.jpg" alt="Ouzoud Waterfalls" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Ouzoud Waterfalls</div>
+                <div class="dest-name-chn">烏祖德瀑布</div>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/carthage-land.jpg" alt="Carthage Land" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Carthage Land Theme Park</div>
+                <div class="dest-name-chn">迦太基樂園主題公園</div>
+            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/giraffe-centre.jpg" alt="Giraffe Centre" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Giraffe Centre</div>
+                <div class="dest-name-chn">長頸鹿中心</div>
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/elephant-orphanage.jpg" alt="Elephant Orphanage" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Sheldrick Elephant Orphanage</div>
+                <div class="dest-name-chn">謝爾德里克小象孤兒院</div>
+            </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/masai-mara.jpg" alt="Masai Mara" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Masai Mara National Reserve</div>
+                <div class="dest-name-chn">馬賽馬拉國家保護區</div>
+            </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/serengeti.jpg" alt="Serengeti" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Serengeti National Park</div>
+                <div class="dest-name-chn">塞倫蓋蒂國家公園</div>
+            </div>
+        </div>
+
+        <!-- 10 (NEW: Flamingo Lake) -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/lake-nakuru.jpg" alt="Lake Nakuru Flamingos" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Lake Nakuru Flamingo Sanctuary</div>
+                <div class="dest-name-chn">納庫魯湖火烈鳥保護區</div>
+            </div>
+        </div>
+
+        <!-- 11 (NEW: Blyde River Canyon) -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/blyde-canyon.jpg" alt="Blyde River Canyon" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Blyde River Canyon</div>
+                <div class="dest-name-chn">布萊德河峽谷與上帝之窗</div>
+            </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/zanzibar-butterflies.jpg" alt="Zanzibar Butterfly Centre" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Zanzibar Butterfly Centre</div>
+                <div class="dest-name-chn">桑給巴爾蝴蝶中心</div>
+            </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/volcanoes-park.jpg" alt="Volcanoes National Park" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Volcanoes National Park</div>
+                <div class="dest-name-chn">火山國家公園</div>
+            </div>
+        </div>
+
+        <!-- 14 (NEW: Murchison Falls) -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/murchison-falls.jpg" alt="Murchison Falls" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Murchison Falls National Park</div>
+                <div class="dest-name-chn">默奇森瀑布國家公園</div>
+            </div>
+        </div>
+
+        <!-- 15 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/kruger-park.jpg" alt="Kruger National Park" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Kruger National Park</div>
+                <div class="dest-name-chn">克魯格國家公園</div>
+            </div>
+        </div>
+
+        <!-- 16 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/table-mountain.jpg" alt="Table Mountain" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Table Mountain Cableway</div>
+                <div class="dest-name-chn">桌山索道</div>
+            </div>
+        </div>
+
+        <!-- 17 (NEW: Hout Bay Seal Island) -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/seal-island.jpg" alt="Seal Island" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Hout Bay Seal Island</div>
+                <div class="dest-name-chn">豪特灣海豹島</div>
+            </div>
+        </div>
+
+        <!-- 18 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/two-oceans-aquarium.jpg" alt="Two Oceans Aquarium" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Two Oceans Aquarium</div>
+                <div class="dest-name-chn">兩洋水族館</div>
+            </div>
+        </div>
+
+        <!-- 19 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/ushaka-marine-world.jpg" alt="uShaka Marine World" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">uShaka Marine World</div>
+                <div class="dest-name-chn">烏沙卡海洋世界</div>
+            </div>
+        </div>
+
+        <!-- 20 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/gold-reef-city.jpg" alt="Gold Reef City" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Gold Reef City Theme Park</div>
+                <div class="dest-name-chn">金礁城主題公園</div>
+            </div>
+        </div>
+
+        <!-- 21 (NEW: Deadvlei & Sossusvlei Dunes) -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/deadvlei-dunes.jpg" alt="Deadvlei Sand Dunes" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Deadvlei & Red Sand Dunes</div>
+                <div class="dest-name-chn">死亡谷與紅沙漠沙丘</div>
+            </div>
+        </div>
+
+        <!-- 22 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/chobe-safari.jpg" alt="Chobe Safari" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Chobe Elephant Safari</div>
+                <div class="dest-name-chn">喬貝大象野生動物園</div>
+            </div>
+        </div>
+
+        <!-- 23 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/sossusvlei.jpg" alt="Namib Desert" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Namib Desert Stargazing</div>
+                <div class="dest-name-chn">納米比沙漠觀星之旅</div>
+            </div>
+        </div>
+
+        <!-- 24 (NEW: Isalo National Park) -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/isalo-park.jpg" alt="Isalo National Park" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Isalo National Park</div>
+                <div class="dest-name-chn">伊薩魯國家公園</div>
+            </div>
+        </div>
+
+        <!-- 25 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/lemurs-park.jpg" alt="Lemurs Park" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Lemurs' Park</div>
+                <div class="dest-name-chn">狐猴公園</div>
+            </div>
+        </div>
+
+        <!-- 26 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/kakum-canopy.jpg" alt="Kakum Canopy Walk" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Kakum Canopy Walk</div>
+                <div class="dest-name-chn">卡庫姆樹頂吊橋步道</div>
+            </div>
+        </div>
+
+        <!-- 27 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/bandia-reserve.jpg" alt="Bandia Reserve" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Bandia Wildlife Reserve</div>
+                <div class="dest-name-chn">班迪亞野生動物保護區</div>
+            </div>
+        </div>
+
+        <!-- 28 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/loango-park.jpg" alt="Loango Park" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Loango National Park</div>
+                <div class="dest-name-chn">羅安果國家公園</div>
+            </div>
+        </div>
+
+        <!-- 29 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/la-vanille-park.jpg" alt="La Vanille Park" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">La Vanille Nature Park</div>
+                <div class="dest-name-chn">香草自然公園（巨龜園）</div>
+            </div>
+        </div>
+
+        <!-- 30 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/casela-parks.jpg" alt="Casela Nature Parks" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Casela Nature Parks</div>
+                <div class="dest-name-chn">卡塞拉自然公園</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>North America Travel Destinations / 北美洲旅遊目的地</title>
+    <!-- Google Fonts for playful kid-friendly typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #e1f5fe; /* Soft, refreshing light blue theme */
+            font-family: 'Fredoka One', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            color: #0277bd; /* North America bright blue accent */
+            text-shadow: 2px 2px 0px #b3e5fc, 4px 4px 0px #81d4fa;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #01579b;
+            font-family: 'Noto Sans TC', sans-serif;
+            text-shadow: 1px 1px 0px #e1f5fe;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-family: 'Fredoka One', cursive, sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background-color: #0277bd;
+            transform: scale(1.05);
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            width: 95vw;
+            max-width: 1200px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border: 4px solid #81d4fa;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #29b6f6;
+        }
+
+        .card-img-container {
+            width: 100%;
+            height: 170px;
+            overflow: hidden;
+            background-color: #e1f5fe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-img {
+            transform: scale(1.08);
+        }
+
+        .card-content {
+            padding: 15px;
+            width: 100%;
+        }
+
+        .dest-name-eng {
+            font-size: 1.15rem;
+            color: #0277bd;
+            margin-bottom: 4px;
+        }
+
+        .dest-name-chn {
+            font-size: 1rem;
+            color: #37474f;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            .back-btn {
+                position: relative;
+                margin-bottom: 15px;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">⬅️ Back to Map / 返回地圖</a>
+        <h1>North America Travel Destinations</h1>
+        <div class="subtitle">北美洲旅遊目的地</div>
+    </header>
+
+    <div class="destinations-grid">
+
+        <!-- 1 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/disney-world.jpg" alt="Walt Disney World" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Walt Disney World Resort</div>
+                <div class="dest-name-chn">華特迪士尼世界度假區</div>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/kennedy-space-center.jpg" alt="Kennedy Space Center" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Kennedy Space Center</div>
+                <div class="dest-name-chn">肯尼迪航天中心</div>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/zion-national-park.jpg" alt="Zion National Park" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Zion National Park</div>
+                <div class="dest-name-chn">錫安國家公園</div>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/arches-national-park.jpg" alt="Arches National Park" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Arches National Park</div>
+                <div class="dest-name-chn">拱門國家公園</div>
+            </div>
+        </div>
+
+        <!-- 5 (NEW: Glacier National Park) -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/glacier-national-park.jpg" alt="Glacier National Park" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Glacier National Park</div>
+                <div class="dest-name-chn">冰川國家公園</div>
+            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/san-diego-zoo.jpg" alt="San Diego Zoo" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">San Diego Zoo & Safari Park</div>
+                <div class="dest-name-chn">聖地亞哥動物園</div>
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/disneyland-anaheim.jpg" alt="Disneyland Resort Anaheim" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Disneyland Resort (California)</div>
+                <div class="dest-name-chn">迪士尼樂園度假區（加州）</div>
+            </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/monterey-aquarium.jpg" alt="Monterey Bay Aquarium" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Monterey Bay Aquarium</div>
+                <div class="dest-name-chn">蒙特雷灣水族館</div>
+            </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/amnh-nyc.jpg" alt="American Museum of Natural History" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Museum of Natural History (NYC)</div>
+                <div class="dest-name-chn">美國自然歷史博物館</div>
+            </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/central-park-zoo.jpg" alt="Central Park Zoo" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Central Park Zoo & Carousel</div>
+                <div class="dest-name-chn">中央公園動物園與旋轉木馬</div>
+            </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/museum-of-play.jpg" alt="The Strong National Museum of Play" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Strong Museum of Play</div>
+                <div class="dest-name-chn">國家玩樂博物館</div>
+            </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/space-center-houston.jpg" alt="Space Center Houston" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Space Center Houston</div>
+                <div class="dest-name-chn">休斯敦太空中心</div>
+            </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/mount-rushmore.jpg" alt="Mount Rushmore" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Mount Rushmore Memorial</div>
+                <div class="dest-name-chn">拉什莫爾山國家紀念公園</div>
+            </div>
+        </div>
+
+        <!-- 14 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/city-museum-stlouis.jpg" alt="City Museum St Louis" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">City Museum (St. Louis)</div>
+                <div class="dest-name-chn">聖路易斯城市博物館</div>
+            </div>
+        </div>
+
+        <!-- 15 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/shedd-aquarium.jpg" alt="Navy Pier & Shedd Aquarium" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Navy Pier & Shedd Aquarium</div>
+                <div class="dest-name-chn">海軍碼頭與謝德水族館</div>
+            </div>
+        </div>
+
+        <!-- 16 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/jasper-icefield.jpg" alt="Jasper National Park" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Jasper National Park & Glacier</div>
+                <div class="dest-name-chn">賈斯珀國家公園與哥倫比亞冰原</div>
+            </div>
+        </div>
+
+        <!-- 17 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/cn-tower-toronto.jpg" alt="CN Tower Toronto" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">CN Tower & Ripley's Aquarium</div>
+                <div class="dest-name-chn">加拿大國家電視塔與水族館</div>
+            </div>
+        </div>
+
+        <!-- 18 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/vancouver-aquarium.jpg" alt="Stanley Park Vancouver" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Stanley Park & Aquarium</div>
+                <div class="dest-name-chn">史丹利公園與溫哥華水族館</div>
+            </div>
+        </div>
+
+        <!-- 19 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/capilano-bridge.jpg" alt="Capilano Suspension Bridge" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Capilano Suspension Bridge</div>
+                <div class="dest-name-chn">卡皮拉諾吊橋公園</div>
+            </div>
+        </div>
+
+        <!-- 20 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/old-quebec.jpg" alt="Old Quebec" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Old Quebec & Chateau Frontenac</div>
+                <div class="dest-name-chn">魁北克老城與芳堤娜城堡</div>
+            </div>
+        </div>
+
+        <!-- 21 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/royal-tyrrell-museum.jpg" alt="Royal Tyrrell Dinosaur Museum" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Royal Tyrrell Dinosaur Museum</div>
+                <div class="dest-name-chn">皇家泰瑞爾恐龍博物館</div>
+            </div>
+        </div>
+
+        <!-- 22 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/hopewell-rocks.jpg" alt="Hopewell Rocks" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Hopewell Rocks & Bay of Fundy</div>
+                <div class="dest-name-chn">霍普威爾岩石與芬迪灣</div>
+            </div>
+        </div>
+
+        <!-- 23 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/xcaret-park.jpg" alt="Xcaret Eco Park" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Xcaret Eco-Archaeological Park</div>
+                <div class="dest-name-chn">西卡萊特瑪雅生態公園</div>
+            </div>
+        </div>
+
+        <!-- 24 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/tulum-ruins.jpg" alt="Tulum Ruins" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Tulum Coastal Ruins & Beach</div>
+                <div class="dest-name-chn">圖盧姆海岸遺跡與沙灘</div>
+            </div>
+        </div>
+
+        <!-- 25 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/papalote-museum.jpg" alt="Papalote Childrens Museum" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Papalote Museo del Niño</div>
+                <div class="dest-name-chn">帕帕洛特兒童博物館</div>
+            </div>
+        </div>
+
+        <!-- 26 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/xelha-park.jpg" alt="Xel-Ha Water Park" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Xel-Há Natural Water Park</div>
+                <div class="dest-name-chn">謝哈天然水上樂園</div>
+            </div>
+        </div>
+
+        <!-- 27 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/atlantis-bahamas.jpg" alt="Atlantis Aquaventure Bahamas" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Atlantis Paradise Island</div>
+                <div class="dest-name-chn">亞特蘭蒂斯天堂島水上樂園</div>
+            </div>
+        </div>
+
+        <!-- 28 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/sloth-sanctuary.jpg" alt="Sloth Sanctuary Costa Rica" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Sloth Sanctuary & Manuel Antonio</div>
+                <div class="dest-name-chn">樹懶保護區與曼努埃爾安東尼奧</div>
+            </div>
+        </div>
+
+        <!-- 29 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/arenal-hanging-bridges.jpg" alt="Arenal Volcano Hanging Bridges" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Arenal Volcano Hanging Bridges</div>
+                <div class="dest-name-chn">阿雷納爾火山雨林吊橋</div>
+            </div>
+        </div>
+
+        <!-- 30 -->
+        <div class="card">
+            <div class="card-img-container">
+                <img src="images/panama-canal.jpg" alt="Panama Canal Miraflores" class="card-img" onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Add Photo';">
+            </div>
+            <div class="card-content">
+                <div class="dest-name-eng">Panama Canal Miraflores Locks</div>
+                <div class="dest-name-chn">巴拿馬運河美利弗洛雷斯水閘</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
